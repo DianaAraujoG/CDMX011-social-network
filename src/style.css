@@ -23,6 +23,9 @@ button {
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 header {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
   flex-wrap: wrap;
   background-color: #405927;
   width: 100%;
@@ -33,22 +36,26 @@ header {
   right: 0;
   padding: 1.3em 0;
   margin-bottom: 0%;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
+  
 }
 header ul {
   display: none;
-  margin-left: -1.5em;
+  
 }
 header ul.show {
   display: block;
+  display: flex;
+  justify-content: center;
+  align-content: center;
   background-color: #405927;
   width: 100%;
   height: 15vmin;
   transition: ease-in-out 0.8s linear;
-  align-content: space-between;
-  margin-left: -1.5em;
+  margin-left: -10vmin;
+  margin-left:-10vmin;
+  padding-left:10vmin;
+  
+  
 }
 header ul li {
   display: inline-block;
@@ -64,6 +71,8 @@ header ul li {
 }
 .div-navegation button {
   margin: 4vmin;
+  width: 30vw;
+  font-size:3.5vmin;
 }
 /*Botones contenidos dentro de img-icon*/
 .btn-routing {
@@ -154,6 +163,9 @@ main {
   text-align: center;
   padding: 1vh;
 }
+#form-post{
+  margin-top:20vmin !important;
+}
 .form-inicial {
   /*align-self: flex-start;*/
   display: flex;
@@ -186,9 +198,6 @@ main {
   line-height: 29px;
   color: #000000;
 }
-.form-inicial button {
-  margin: 1vh 25vw;
-}
  .form-inicial textarea {
   height: 13.5em;
 } 
@@ -214,6 +223,8 @@ main {
 .submit-btn {
   padding: 0 1vw;
   font-size: 2.5vh;
+  margin: 1vh 25vw;
+  margin-bottom: 3vh;
 }
 #heart-movil {
   width: 30vw;
@@ -289,7 +300,8 @@ main {
   display: block;
 }
 #btn-post{
-  font-size: 3.7vw;
+  width:35vmin;
+  font-size: 3vmin;
 }
 #wall{
   display: flex;
@@ -316,6 +328,7 @@ main {
   font-size: 5vw;
   color: #000000;
   text-align: center;
+ padding-right: 5vmin;
 }
 #post{
   margin-top: 10vh;
@@ -390,12 +403,21 @@ main {
   margin: 0.5em;
   font-size: 3.5vw;
   font-weight: 600;
+  display:none;
+}
+.btn-wall-movil{
+  width: 9vmin;
 }
 .like-counter{
-  margin-right: 6vw;
+  margin-right: 10vw;
+  margin-left:0;
 }
 .like{
 width: 8vmin;
+margin-right: 1vw;
+}
+.me-encorazona{
+  font-weight: bold;
 }
 footer {
   margin-top: 0%;
@@ -414,23 +436,96 @@ footer img {
   margin-top: 0.3em;
   margin-bottom: 0.3em;
 }
-@media only screen and (min-width: 1026px) {
+.btns-post{
+  display: flex;
+  flex-direction: row;
+  width: 95%;
+  margin: 0;
+  align-items: center;
+  justify-content: space-around;
+}
+#btn-return, .btn-create-post, #btn-return-edit, #btn-update{
+  width: 23vmin;
+  font-size:3vmin;
+  margin-top: 5vmin;
+  padding: 0;
+}
+@media only screen and (min-width: 768px ) {
+  #img-users {
+    width: 9.1vmin; 
+  }
+  #process-movil{
+    width: 50vmin;
+  }
+  header ul.show {
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+  }
+  
+  .like-counter {
+    font-size: 2.5vmin;}
+
+  .form-inicial{
+      margin-left: 8vw;
+    }
+  .form-inicial textarea,select {
+    width: 24em;
+    
+  }
+  .btns-post{
+    display: flex;
+    flex-direction: row;
+    width: 95%;
+    margin: 0;
+    align-items: center;
+    justify-content: space-around;
+    
+  }
+  #btn-return, .btn-create-post, #btn-return-edit, #btn-update{
+    width: 22.5vmin;
+    font-size:3vmin;
+    height: 4.4vmin;
+    margin-top: 5vmin;
+    padding: 0;
+  }
+ 
+}
+
+@media only screen and (min-width: 1024px) {
   header {
     height: 3em;
+    flex-direction: row;
+    flex-wrap: nowrap;
   }
   header ul {
     display: block;
-    width: 40vw;
+  }
+  .div-navegation {
+    width: 50%;
+    margin: 0;
+    padding:0;
+    display:flex;
+    flex-direction: row;
+    align-items: space-around;
+  }
+  .div-navegation button {
+    margin: 2vmin;
+    width: 16vw;
+    height:4vmin;
+    font-size:2.3vmin;
   }
   #logoGF {
-    margin-bottom: 1.8em;
+    margin-bottom: 11vmin;
     margin-left: 0;
+    width:95%;
   }
   .menu-icon {
     display: none;
   }
   .banner{
-    margin-top: 8vmin;
+    margin-top: 6vmin;
+    width: 100%;
   }
   main {
     margin-top: 5.5em;
@@ -441,7 +536,7 @@ footer img {
   }
   #register-page,
   #login-page {
-    margin-left: 6em;
+    margin-left: 3em;
   }
   #btn-register-movil {
     display: none;
@@ -450,46 +545,55 @@ footer img {
     padding: 4vmax;
     padding-top: 2vmax;
     margin-left: 0;
+
   }
   .leaf-img {
     width: 45vw;
   }
-  .form-inicial button {
-    margin: 1vh 10vw;
-    margin-top: 5vh;
-    width: 10vmax;
+  .submit-btn{
+ margin: 1vh 10vw;
+ margin-top: 5vh;
+ width: 17vmin;
+ font-size:2vmin;
+ height:3.5vmin;
   }
+
   #process-desktop {
     display: block;
+    width:97%;
   }
   #process-movil {
     display: none;
   }
   #madre-tierra {
     display: block;
+    width:90%;
   }
   #heart {
     display: block;
-    margin-right: 4vw;
+    margin-right: 6vw;
+    padding-right:7vw;
+    width:85%;
   }
   #heart-movil {
     display: none;
   }
-  .div-navegation {
-    width: 40%;
-    margin-left: 14vw;
-  }
+  
   #google-icon {
-    width: 2vmax;
-    height: 2vmax;
+    width: 2vmin;
+    height: 2vmin;
     margin: 0;
     margin-left: .2vw;
+  }
+  .google {
+    font-size:1.8vmin;
   }
   #root {
     min-height: calc(80vh - 80px);
   }
   #btn-exit, #btn-exit-wall{
     display:block;
+    margin-bottom: 0;
   }
   #logout-movil{
     display: none;
@@ -519,10 +623,15 @@ footer img {
     width: 6vmin;
     }
   .like-counter{
-    margin-right: 20vw;
+    margin-right: 10vw;
+    width:100%;
   }
   .btn-wall{
     font-size: 1vw;
+    display:block;
+  }
+  .btn-wall-movil{
+    display:none;
   }
   #wall-image{
     margin-right: 5vmax;
@@ -532,6 +641,28 @@ footer img {
     font-size: 3vw;
   }
   #btn-post{
-    font-size: 1.4vw;
+    font-size: 3.8vmin;
+    width: 48vmin;
+    height: 5vmin;
   }
+  .btns-post{
+    display: flex;
+    flex-direction: row;
+    width: 60%;
+    margin: 0;
+    align-items: center;
+    justify-content: space-around;
+    padding:0 5vmin 0 5vmin;
+  }
+  #btn-return, .btn-create-post, #btn-return-edit, #btn-update{
+    width: 22.5vmin;
+    font-size:3vmin;
+    height: 4.4vmin;
+    margin-top: 5vmin;
+    padding: 0;
+  }
+  #form-post{
+    margin-top: 15vmin !important;
+  }
+
 }

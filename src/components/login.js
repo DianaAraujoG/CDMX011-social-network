@@ -31,7 +31,7 @@ export const login = () => {
        <br>
        <p id="error-message"></p>
        <button id="form-button-login" class="submit-btn">Enviar</button>
-       <button id="btn-google"class="submit-btn google">Entra con  <img src="img/google.png" alt="google" id="google-icon"></button>
+       <button id="btn-google" class="submit-btn google">Entra con  <img src="img/google.png" alt="google" id="google-icon"></button>
      </form>
      <div class="img-register-desktop">
        <img id="heart" src="img/heart.png" alt="heart" />

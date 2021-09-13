@@ -31,8 +31,8 @@ export const post = () => {
             <textarea required id ='idea-post' name="textarea" rows="10" cols="40"id="text-post" placeholder = 'Escribe aquí tus ideas!' autofocus></textarea>
             <p id="err-msg"></p>
             <div class ='btns-post'>
-            <button class="btn-routing" id="btn-return">Regresar</button>
-            <button type='submit' class="btn-routing" id="btn-post">Publicar</button>
+            <button id="btn-return">Regresar</button>
+            <button type='submit' class="btn-create-post">Publicar</button>
             </div>
         </form>
         <div id="post-container"></div>

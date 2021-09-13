@@ -6,7 +6,7 @@ import { register } from './components/register.js';
 // eslint-disable-next-line import/no-cycle
 import { login } from './components/login.js';
 import { wall } from './components/wall.js';
-import { post } from './components/post.js';
+import { post } from './components/createPost.js';
 import { edit } from './components/edit.js';
 
 const rootDiv = document.getElementById('root');

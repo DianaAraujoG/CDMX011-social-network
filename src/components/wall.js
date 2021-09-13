@@ -1,9 +1,10 @@
+/* eslint-disable max-len */
 /* eslint-disable import/no-cycle */
 import { signOut, getUser } from '../lib/firebaseClient.js';
 import { onNavigate } from '../main.js';
 import { edit } from './edit.js';
 import {
-  getAllPost, getThePost, deletePost, updatePost, increment,
+  getAllPost, getThePost, deletePost, updatePost,
 } from '../lib/posts.js';
 
 export const wall = () => {
@@ -29,11 +30,7 @@ export const wall = () => {
   `;
   const divWall = document.createElement('div');
   divWall.innerHTML = html;
-  // Se puede hacer de otra forma
-  /* if (getUser() === null) {
-    onNavigate('/');
-    alert('Inicia Sesion');
-  } else { */
+
   const emailWelcome = divWall.querySelector('#user-email-welcome');
   emailWelcome.innerHTML = getUser().email;
   // para cerrar sesion
@@ -67,35 +64,40 @@ export const wall = () => {
     });
     // la línea 66 es para que se actualice y no sobreescriba.
     postContainer.innerHTML = '';
-    documents.forEach((eachPost) => {
+    const documentOrder = documents.sort((post1, post2) => post2.infopost.dateComparative - post1.infopost.dateComparative);
+    documentOrder.forEach((eachPost) => {
       const {
         topic, idea, user, datePublic, likes,
       } = eachPost.infopost;
       const id = eachPost.id;
+      const likesEmail = likes.length;
       postContainer.innerHTML += `<div class="div-post">
         <h3>${user}</h3> 
         <span class="date-public">${datePublic}</span>
         <h4>Temática: ${topic}</h4>
          <p>${idea}</p>
          <div class= "div-editPost">
-         <img class="like count-likes" src="img/likes.png" alt="like" data-id="${id}"><span class="like-counter">${likes}  Likes</span>
-        <span class="btnEditDelete"  data-id="${user}">
-        <button class ='btn-delete btn-wall' data-id="${id}" >Eliminar</button>
-        <button class ='btn-edit btn-wall' data-id="${id}">Editar</button>
-        </span>
-        </div>
-        </div>
+         <img class="like count-likes" src="img/likes.png" alt="like" data-id="${id}"><span class="like-counter"><span class="me-encorazona">${likesEmail} </span>Me Encorazona</span>
+         <img class ='btn-delete btn-wall-movil' id="${user}" data-id="${id}" src="img/bote-de-basura.png">
+         <button class ='btn-delete btn-wall' id="${user}" data-id="${id}" >Eliminar</button>
+         <img class ='btn-edit btn-wall-movil' id="${user}"  data-id="${id}" src="img/lapiz.png">
+         <button class ='btn-edit btn-wall' id="${user}"  data-id="${id}">Editar</button>
+         </div>
+         </div>
         `;
     });
-    document.querySelectorAll('.btnEditDelete').forEach((elem) => {
-      const email = elem.dataset.id;
-      const emailLogin = getUser().email;
-      if (email !== emailLogin) {
-        elem.style.visibility = 'hidden';
-        // elem.style.display = 'none';
+
+    const usermail = getUser().email;
+
+    const btnsDelete = document.querySelectorAll('.btn-delete');
+
+    btnsDelete.forEach((elems) => {
+      if (usermail !== elems.id) {
+        // eslint-disable-next-line no-param-reassign
+        elems.style.visibility = 'hidden';
       }
     });
-    const btnsDelete = document.querySelectorAll('.btn-delete');
+
     btnsDelete.forEach((btn) => {
       btn.addEventListener('click', async (ele) => {
         const result = window.confirm('¿Estás seguro de querer eliminar el post?');
@@ -104,44 +106,51 @@ export const wall = () => {
         }
       });
     });
+
     const btnsEdit = document.querySelectorAll('.btn-edit');
     const rootDiv = document.getElementById('root');
+
+    btnsEdit.forEach((elems) => {
+      if (usermail !== elems.id) {
+        // eslint-disable-next-line no-param-reassign
+        elems.style.visibility = 'hidden';
+      }
+    });
+
     btnsEdit.forEach((btn) => {
       btn.addEventListener('click', async (ele) => {
         const thePost = await getThePost(ele.target.dataset.id);
         const post = thePost.data();
+        console.log(thePost);
         const id = thePost.id;
-        console.log(post, id);
         while (rootDiv.firstChild) { // Mientras contenga informacion
           rootDiv.removeChild(rootDiv.firstChild);
         }
         rootDiv.appendChild(edit(id, post.topic, post.idea));
-        // edit(thePost.data())
       });
     });
+
     const countLikes = document.querySelectorAll('.count-likes');
-    countLikes.forEach((btn) => {
-      let giveLike = true;
-      btn.addEventListener('click', async (eve) => {
-        eve.preventDefault();
-        const id = eve.target.dataset.id;
-        console.log(giveLike);
-        if (giveLike) {
-          await updatePost(id, {
-            likes: increment(1),
+    countLikes.forEach((bttn) => {
+      bttn.addEventListener('click', (event) => {
+        const id = event.target.dataset.id;
+        getThePost(id)
+          .then((doc) => {
+            console.log(`esto es DOC ${doc}`);
+            if (doc.data().likes.includes(usermail)) {
+              return updatePost(id, {
+                likes: firebase.firestore.FieldValue.arrayRemove(usermail),
+              });
+            }
+            return updatePost(id, {
+              likes: firebase.firestore.FieldValue.arrayUnion(usermail),
+            });
+          })
+          .catch((error) => {
+            console.log('Error getting document:', error);
           });
-          giveLike = false;
-        } else
-        if (giveLike === false) {
-          await updatePost(id, {
-            likes: increment(-1),
-          });
-          giveLike = false;
-          console.log(giveLike);
-        }
       });
     });
   });
-
   return divWall;
 };

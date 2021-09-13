@@ -32,7 +32,7 @@ export const edit = (id, topic, idea) => {
               <p id="err-msg-edit"></p>
               <div class ='btns-post'>
               <button class="btn-routing" id="btn-return-edit">Cancelar</button>
-              <button type='submit' class="btn-routing" id="btn-update">Guardar</button>
+              <button type='submit' class="btn-routing btn-create-post" id="btn-update">Guardar</button>
               </div>
           </form>
           <div id="post-container"></div>
