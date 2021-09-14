@@ -32,7 +32,7 @@ export const post = () => {
             <p id="err-msg"></p>
             <div class ='btns-post'>
             <button id="btn-return">Regresar</button>
-            <button type='submit' class="btn-create-post">Publicar</button>
+            <button type='submit' id="btn-create-post">Publicar</button>
             </div>
         </form>
         <div id="post-container"></div>

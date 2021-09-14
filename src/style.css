@@ -52,7 +52,6 @@ header ul.show {
   height: 15vmin;
   transition: ease-in-out 0.8s linear;
   margin-left: -10vmin;
-  margin-left:-10vmin;
   padding-left:10vmin;
   
   
@@ -363,16 +362,14 @@ main {
 }
 .div-post h3{
   text-transform: uppercase;
-  font-family: Comfortaa;
-  font-style: normal;
+  font-family: 'Comfortaa', sans-serif;
   font-weight: 500;
   font-size: 2.5vh;
   color: #0E6359;
   margin-bottom: 3vmin;
 }
 .div-post h4{
-  font-family: "Comfortaa";
-  font-style: normal;
+  font-family: 'Comfortaa', sans-serif;
   font-weight: 600;
   color: #0E6359;
   margin-bottom: 2vmin;
@@ -444,7 +441,7 @@ footer img {
   align-items: center;
   justify-content: space-around;
 }
-#btn-return, .btn-create-post, #btn-return-edit, #btn-update{
+#btn-return, #btn-create-post, #btn-return-edit, #btn-update{
   width: 23vmin;
   font-size:3vmin;
   margin-top: 5vmin;
@@ -461,6 +458,9 @@ footer img {
     display: flex;
     justify-content: space-between;
     align-content: center;
+  }
+  .date-public{
+    margin-left:60%;
   }
   
   .like-counter {
@@ -482,7 +482,7 @@ footer img {
     justify-content: space-around;
     
   }
-  #btn-return, .btn-create-post, #btn-return-edit, #btn-update{
+  #btn-return, #btn-create-post, #btn-return-edit, #btn-update{
     width: 22.5vmin;
     font-size:3vmin;
     height: 4.4vmin;
@@ -509,6 +509,10 @@ footer img {
     flex-direction: row;
     align-items: space-around;
   }
+  button {
+    width: 15vmax;
+    height: 2.5vmax;
+  }
   .div-navegation button {
     margin: 2vmin;
     width: 16vw;
@@ -529,10 +533,6 @@ footer img {
   }
   main {
     margin-top: 5.5em;
-  }
-  button {
-    width: 15vmax;
-    height: 2.5vmax;
   }
   #register-page,
   #login-page {
@@ -580,8 +580,8 @@ footer img {
   }
   
   #google-icon {
-    width: 2vmax;
-    height: 2vmax;
+    width: 2.5vmin;
+    height: 2.5vmin;
     margin: 0;
     margin-left: .2vw;
   }
@@ -616,7 +616,7 @@ footer img {
     margin-top: 0;
   }
   .date-public{
-    margin-left: 78% ;
+    margin-left: 73% ;
   }
   .like{
     margin-left: 0;
@@ -654,7 +654,7 @@ footer img {
     justify-content: space-around;
     padding:0 5vmin 0 5vmin;
   }
-  #btn-return, .btn-create-post, #btn-return-edit, #btn-update{
+  #btn-return, #btn-create-post, #btn-return-edit, #btn-update{
     width: 22.5vmin;
     font-size:3vmin;
     height: 4.4vmin;
@@ -662,7 +662,7 @@ footer img {
     padding: 0;
   }
   #form-post{
-    margin-top: 11vmin !important;
+    margin-top: 12.5vmin !important;
   }
 
 }

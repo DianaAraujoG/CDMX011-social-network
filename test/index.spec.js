@@ -6,6 +6,7 @@ import './global/firebase.js';
 import { home } from '../src/components/home.js';
 import { login } from '../src/components/login.js';
 import { register } from '../src/components/register.js';
+import { post } from '../src/components/createPost.js';
 
 describe('Coleccion de test sobre HOME', () => { // ----HOME---------------------------------------------------
   const homeRender = home();
@@ -170,5 +171,37 @@ describe('Coleccion de test soble REGISTER', () => { // -------REGISTER---------
        <i id="hide2" class="fas fa-eye-slash" style="color: rgb(14, 99, 89); display: none;"></i>
        </span>`,
     );
+  });
+});
+
+describe('Coleccion de test soble POSTS', () => { // -------POSTS-------------------------------------------
+  document.body.innerHTML = '<div id="root"></div>';
+  const component = post();
+  test('should render', () => {
+    const rootDiv = document.getElementById('root');
+    rootDiv.appendChild(component);
+    expect(rootDiv.innerHTML).toMatchSnapshot();
+  });
+
+  test('should create a post when clicked button', () => {
+    const mockPost = jest.fn();
+    mockPost.mockImplementation(() => Promise.resolve());
+
+    firebase.doc = jest.fn().mockImplementation(() => ({
+      set: mockPost,
+    }));
+    const rootDiv = document.getElementById('root');
+    rootDiv.appendChild(component);
+
+    const userUid = 'TewHJrnoAJYarLIuRIjl7DrzO2F2';
+    const user = 'sparroquin90@gmail.com';
+    const topic = 'Reciclaje';
+    const idea = 'Esto es una idea.';
+
+    document.getElementById('topic-post').value = topic;
+    document.getElementById('idea-post').value = idea;
+
+    document.getElementById('btn-create-post').click(); // Aqui llaama al form de Login
+    expect(mockPost).toHaveBeenCalledWith(userUid, user, topic, idea);
   });
 });

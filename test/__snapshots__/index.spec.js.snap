@@ -1,5 +1,147 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Coleccion de test soble POSTS should render 1`] = `
+"<div>
+  <header>
+  <a href=\\"/\\"><img src=\\"img/logo-desktop.png\\" alt=\\"logotipo\\" id=\\"logoGF\\"></a>
+  <span class=\\"menu-icon\\" id=\\"users-icon\\"><img id=\\"img-users\\" src=\\"img/users.png\\" alt=\\"\\"></span>
+
+  <div class=\\"div-navegation\\">
+    <ul id=\\"navegacion\\" class=\\"show\\">
+      <li><a><button class=\\"blue btn-routing\\" id=\\"btn-register\\" value=\\"/register\\">¡Regístrate!</button></a></li>
+      <li><a><button class=\\"blue btn-routing\\" id=\\"btn-login\\" value=\\"/login\\">Iniciar Sesión</button></a></li>
+    </ul>
+  </div>
+</header>
+
+    <div id=\\"home-page\\">
+      <div class=\\"banner\\">
+        <p class=\\"banner-welcome\\">
+          Cuidar de la naturaleza es cuidar de nosotros.
+        </p>
+        <button class=\\"btns-login btn-routing\\" id=\\"btn-register-movil\\" value=\\"/register\\">¡Regístrate!</button>
+      </div>
+      <div class=\\"process\\">
+        <h2 id=\\"title-process\\">¿Cómo Funciona?</h2>
+        <div class=\\"process-img\\">
+          <img id=\\"process-movil\\" src=\\"img/process-movil.png\\" alt=\\"register\\">
+          <img id=\\"process-desktop\\" src=\\"img/process-desktop.png\\" alt=\\"register\\">
+        </div>
+      </div>
+    </div>
+   
+   </div><div>
+  <header>
+  <a href=\\"/\\"><img src=\\"img/logo-desktop.png\\" alt=\\"logotipo\\" id=\\"logoGF\\"></a>
+  <span class=\\"menu-icon\\" id=\\"users-icon\\"><img id=\\"img-users\\" src=\\"img/users.png\\" alt=\\"\\"></span>
+  <div class=\\"div-navegation\\">
+    <ul id=\\"navegacion\\">
+      <li><a><button class=\\"blue btn-routing\\" id=\\"btn-register\\" value=\\"/register\\">¡Regístrate!</button></a></li>
+      <li><a><button class=\\"blue btn-routing\\" id=\\"btn-login\\" value=\\"/login\\">Iniciar Sesión</button></a></li>
+    </ul>
+  </div>
+</header>
+  <div id=\\"login-page\\">
+     <form id=\\"login-form\\" class=\\"form-inicial\\">
+       <h2 class=\\"titles\\" id=\\"title-form\\">¡Hola Green Friend!</h2>
+       <img id=\\"heart-movil\\" src=\\"img/heart.png\\" alt=\\"heart\\">
+       <label for=\\"email\\">Correo electrónico</label>
+       <input type=\\"email\\" id=\\"login-email\\" placeholder=\\"alguien@ejemplo.com\\">
+       <label for=\\"password\\">Contraseña</label>
+       <div class=\\"show-passwords\\">
+       <input type=\\"password\\" id=\\"login-password\\" placeholder=\\"******\\">
+       <span class=\\"eyes-login\\">
+       <i id=\\"show3\\" class=\\"fas fa-eye\\" style=\\"color: rgb(14, 99, 89); display: block;\\"></i>
+       <i id=\\"hide3\\" class=\\"fas fa-eye-slash\\" style=\\"color: rgb(14, 99, 89); display: none;\\"></i>
+       </span>
+       </div>
+       <br>
+       <p id=\\"error-message\\"></p>
+       <button id=\\"form-button-login\\" class=\\"submit-btn\\">Enviar</button>
+       <button id=\\"btn-google\\" class=\\"submit-btn google\\">Entra con  <img src=\\"img/google.png\\" alt=\\"google\\" id=\\"google-icon\\"></button>
+     </form>
+     <div class=\\"img-register-desktop\\">
+       <img id=\\"heart\\" src=\\"img/heart.png\\" alt=\\"heart\\">
+     </div>
+   </div>
+  </div><div>
+  <header>
+  <a href=\\"/\\"><img src=\\"img/logo-desktop.png\\" alt=\\"logotipo\\" id=\\"logoGF\\"></a>
+  <span class=\\"menu-icon\\" id=\\"users-icon\\"><img id=\\"img-users\\" src=\\"img/users.png\\" alt=\\"\\"></span>
+  <div class=\\"div-navegation\\">
+    <ul id=\\"navegacion\\">
+      <li><a><button class=\\"blue btn-routing\\" id=\\"btn-register\\" value=\\"/register\\">¡Regístrate!</button></a></li>
+      <li><a><button class=\\"blue btn-routing\\" id=\\"btn-login\\" value=\\"/login\\">Iniciar Sesión</button></a></li>
+    </ul>
+  </div>
+ </header>
+  <div id=\\"register-page\\">
+     <form id=\\"register-form\\" class=\\"form-inicial\\">
+      <img class=\\"leaf-img\\" src=\\"img/leafs-desktop.png\\" alt=\\"leafs\\">
+       <h2 class=\\"titles\\" id=\\"title-form\\">Registro</h2>
+       <label for=\\"email\\">Correo electrónico</label>
+       <input type=\\"email\\" id=\\"user-email\\" placeholder=\\"alguien@ejemplo.com\\">
+       <label for=\\"password\\">Contraseña</label>
+       <div class=\\"show-passwords\\">
+       <input type=\\"password\\" id=\\"user-password\\" placeholder=\\"Mínimo 6 carácteres\\">
+       <span class=\\"eyes\\">
+       <i id=\\"show1\\" class=\\"fas fa-eye\\" style=\\"color: rgb(14, 99, 89); display: block;\\"></i>
+       <i id=\\"hide1\\" class=\\"fas fa-eye-slash\\" style=\\"color: rgb(14, 99, 89); display: none;\\"></i>
+       </span>
+       </div>
+       <label for=\\"password\\"> Confirma Contraseña</label>
+       <div class=\\"show-passwords\\">
+       <input type=\\"password\\" id=\\"confirm-password\\" placeholder=\\"Mínimo 6 carácteres\\">
+       <span class=\\"eyes-confirm\\">
+       <i id=\\"show2\\" class=\\"fas fa-eye\\" style=\\"color: rgb(14, 99, 89); display: block;\\"></i>
+       <i id=\\"hide2\\" class=\\"fas fa-eye-slash\\" style=\\"color: rgb(14, 99, 89); display: none;\\"></i>
+       </span>
+       </div>
+       <br>
+       <p id=\\"error-message-register\\"></p>
+       <button id=\\"form-button-register\\" class=\\"submit-btn\\">Enviar</button>
+       <button id=\\"btn-google\\" class=\\"submit-btn google\\"><img src=\\"img/google.png\\" alt=\\"google\\" id=\\"google-icon\\">Regístrate</button>
+     </form>
+     <div class=\\"img-register-desktop\\">
+       <img id=\\"madre-tierra\\" src=\\"img/madreTierra.png\\" alt=\\"MadreTierra\\">
+     </div>
+   </div>
+</div><div>
+    <header>
+        <a href=\\"/\\"><img src=\\"img/logo-desktop.png\\" alt=\\"logotipo\\" id=\\"logoGF\\"></a>
+        <span class=\\"menu-icon\\" id=\\"logout-movil\\"><img id=\\"img-users\\" src=\\"img/logout.png\\" alt=\\"cerrar sesion\\"></span>
+
+        <nav class=\\"div-navegation\\">
+            <button class=\\"btn-routing beige\\" id=\\"btn-exit\\">Cerrar sesión</button>
+        </nav>
+    </header>
+    <div id=\\"post\\">
+        <form class=\\"form-inicial\\" id=\\"form-post\\">
+            <img id=\\"nubes-movil\\" class=\\"cloud-bg\\" src=\\"img/nubes-movil.png\\" alt=\\"nubes\\">
+            <img id=\\"nubes-desktop\\" class=\\"cloud-bg\\" src=\\"img/nubes-desktop.png\\" alt=\\"nubes\\"> 
+            <h2 class=\\"titles\\">Crear publicación</h2>
+            <label for=\\"select\\">Temática</label>
+            <select required=\\"\\" name=\\"select\\" id=\\"topic-post\\">
+            <option hidden=\\"\\" selected=\\"\\">Selecciona una opción</option>
+                <option value=\\"Reciclaje\\">Reciclaje</option>
+                <option value=\\"Hazlo tu mismo\\">Hazlo tu mismo</option>
+                <option value=\\"Productos ecológicos\\">Productos ecológicos</option>
+                <option value=\\"Orgánicos\\">Orgánicos</option>
+                <option value=\\"Medio ambiente\\">Medio ambiente</option>
+            </select>
+            <label for=\\"text-post\\">Coloca tu idea ecofriendly</label>
+            <textarea required=\\"\\" id=\\"idea-post\\" name=\\"textarea\\" rows=\\"10\\" cols=\\"40\\" placeholder=\\"Escribe aquí tus ideas!\\" autofocus=\\"\\"></textarea>
+            <p id=\\"err-msg\\"></p>
+            <div class=\\"btns-post\\">
+            <button id=\\"btn-return\\">Regresar</button>
+            <button type=\\"submit\\" id=\\"btn-create-post\\">Publicar</button>
+            </div>
+        </form>
+        <div id=\\"post-container\\"></div>
+    </div>
+    </div>"
+`;
+
 exports[`Coleccion de test soble REGISTER should render 1`] = `
 "<div>
   <header>
