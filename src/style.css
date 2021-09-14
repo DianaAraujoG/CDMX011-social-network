@@ -580,8 +580,8 @@ footer img {
   }
   
   #google-icon {
-    width: 2vmax;
-    height: 2vmax;
+    width: 2vmin;
+    height: 2vmin;
     margin: 0;
     margin-left: .2vw;
   }
@@ -662,7 +662,7 @@ footer img {
     padding: 0;
   }
   #form-post{
-    margin-top: 11vmin !important;
+    margin-top: 15vmin !important;
   }
 
 }
